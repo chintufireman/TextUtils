@@ -1,11 +1,11 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
 import TextForm from "./components/TextForm";
-import About from "./components/About";
+// import About from "./components/About";
 import { useState } from "react";
 import Alert from "./components/Alert";
-import { Routes } from "react-router";
-import { BrowserRouter as Router, Route, Link, BrowserRouter } from "react-router-dom";
+// import { Routes } from "react-router";
+// import { BrowserRouter as Router, Route, Link, BrowserRouter } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState("light"); //whether dark mode enabled or not
   const [alert, setAlert] = useState(null);
@@ -36,7 +36,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         <NavBar
           title={"TextUtils"}
           aboutText="About TextUtils"
@@ -50,26 +50,22 @@ function App() {
       function */}
         <Alert alert={alert} />
         <div className="container my-3">
-          <Routes>
-            <Route
-              exact path="/"
-              element={
-                <TextForm
+          {/* <Routes> */}
+            {/* <Route exact path="/" element={ } /> */}
+            <TextForm
                   showAlert={showAlert}
                   heading="Enter the text to analyze below"
                   mode={mode}
                 />
-              }
-            />
-            <Route exact path="/about" element={ <About />} />
+            {/* <Route exact path="/about" element={ <About />} /> */}
             {/* if you dont use exact the example see below
               1. /user -> component1
               2. /user/about -> component2 then without using exact it will 
               direct you to the first component because react does the partial matching
             */}
-          </Routes>
+          {/* </Routes> */}
         </div>
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </>
   );
 }

@@ -51,7 +51,7 @@ export default function TextForm(props) {
     color:props.mode === 'dark' ? 'white':'black'}}>
         <h2>Your text sumary</h2>
         <p>
-          {text.charAt(0) != "" ? text.split(" ").length : 0} words {text.length} number of characters
+          {text.charAt(0) !== "" ? text.split(" ").length : 0} words {text.length} number of characters
         </p>
         <p>{0.008 * text.split(" ").length} Minutes to read</p>
         <h2>Preview</h2>
